@@ -1,19 +1,19 @@
 ---
 declared-services:
-  speech-to-text-service-standard:
+  speech-to-text-service-lite:
     label: speech_to_text
-    plan: standard
+    plan: lite
 applications:
-- name: translation-mqtt
+- name: language-translation-ui
   path: .
   timeout: 180
   command: npm start
   #health-check-type: none
   memory: 512M
   services:
-    - "Speech To Text-lg"
-    - "Text to Speech-16"
-  #- speech-to-text-service-standard
+    - "speech-to-text-service-lite"
+    - "text-to-speech-service-lite"
+  #- speech-to-text-service-lite
   env:
     NODE_ENV: production
     SECURE_EXPRESS: 1

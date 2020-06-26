@@ -43,9 +43,9 @@ app.get('/js/index.js', expressBrowserify('src/index.js', {
 // For local development, replace username and password
 var config = extend({
   version: 'v1',
-  url: 'https://stream.watsonplatform.net/speech-to-text/api',
-  username: process.env.STT_USERNAME || '<username>',
-  password: process.env.STT_PASSWORD || '<password>'
+  url: 'https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/7c9ff4e5-bc68-4ebf-9598-1ee650265128',
+  username: 'apikey',
+  password: 'hmIt-tYhnrA9x3kwKP9RWgQ-AyOGydQBNj1VAl-DH3WZ'
 }, vcapServices.getCredentials('speech_to_text'));
 
 var authService = watson.authorization(config);
